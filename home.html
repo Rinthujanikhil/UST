@@ -1,0 +1,80 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"><html><head><META http-equiv="Content-Type" content="text/html; charset=utf-8"><style></style></head><body><u></u>
+
+
+    
+    
+    
+    
+    
+
+  <div>
+  
+      <u></u>
+          <div class="m_container-fluid">
+              <h1 style="background-color:rgb(255, 99, 71);">Food Calorie Tracking</h1>
+            <a class="m_navbar-brand" href="https://www.google.com/url?q=http://127.0.0.1:7000&amp;source=gmail-html&amp;ust=1668324060411000&amp;usg=AOvVaw0GpK6xhJkNZBM-IzxyIin8" target="_blank" rel="noreferrer"></a>
+            <button class="m_navbar-toggler" type="button" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="m_navbar-toggler-icon"></span>
+            </button>
+            <div class="m_collapse m_navbar-collapse" id="m_navbarSupportedContent">
+              <ul class="m_navbar-nav m_me-auto m_mb-2 m_mb-lg-0">
+                <li class="m_nav-item">
+                  <a class="m_nav-link m_active" href="http://127.0.0.1:7000/home" target="_blank" rel="noreferrer">Home</a>
+                </li>
+                <li class="m_nav-item">
+                  <a class="m_nav-link" href=" http://127.0.0.1:7000/add" target="_blank" rel="noreferrer">Add</a>
+                </li>
+                
+                
+              
+             
+            </ul></div>
+            <form class="m_d-flex" role="search" action="/home" method="POST" target="_blank">
+              <input class="m_form-control m_me-2" type="text" aria-label="Search" id="m_date" name="date">
+              <button class="m_btn m_btn-outline-success" type="submit">Search</button>
+            </form>
+          </div>
+        <u></u>
+  
+        
+  
+        <div class="m_container">
+          <form class="m_container" action="/update" method="POST" target="_blank">
+              <table class="m_table m_table-hover">
+                  <thead>
+                      <tr>
+                          <th scope="col">Date</th> 
+                          <th scope="col">Food</th>
+                          <th scope="col">Fat(gm)</th>
+                          <th scope="col">Protein(gm)</th>
+                          <th scope="col">Carbohydrate(gm)</th>
+                          <th scope="col">Calorie(gm)</th>
+                          
+                      </tr>
+                  </thead>
+                  <tbody><td>
+                      {% for food1 in foods %}
+                      <tr>
+                         
+                       <th scope="row">
+                          {{food1.date}}</th>
+                          <td>{{food1.food}}</td>
+                          <td>{{food1.fat}}</td>
+                          <td>{{food1.protein}}</td>
+                          <td>{{food1.carbo}}</td>
+                          <td>{{food1.calorie}}</td>
+                          
+                      
+                        <td>
+                          <a href ="/delete/{{food1.food}}"type="button" class="btn btn-primary btn-sm mx-1">Delete</button>
+                            <a href ="/edit/{{food1.food}}"type="button" class="btn btn-primary btn-sm mx-1">EDIT</button>
+                        </td>
+                      </tr><td>
+                      {% endfor %}
+                  </td></td></tbody>
+              </table>
+          </form>
+        </div>
+  </div>
+  </body></html>
